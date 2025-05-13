@@ -1,70 +1,89 @@
 ---
 layout: default
-title: <Your Name> - Curriculum Vitae
+title: <Kasper Atkinson> - Curriculum Vitae
 permalink: /cv/
 ---
 ## Curriculum Vitae
 
-[Download my CV]({{ "/assets/CV.pdf" | relative_url }}) in PDF format.
+[Download my CV]({{ "/assets/IROP_CV.pdf" | relative_url }}) in PDF format.
 
 
-**Email:** [netID@cornell.edu](mailto:netID@cornell.edu) | | | **Phone:** +123 456 7890
+**Email:** [kna37@cornell.edu](mailto:kna37@cornell.edu) | | | **Phone:** +1 (917) 783-4353
 
 ---
 
 #### Objective
-Aspiring engineering student with a strong foundation in.... Passionate about ... and eager to apply my knowledge in real-world applications.
+Aspiring engineering student with a strong foundation in aerospace engineering and iterative design. Passionate about multidisciplinary design optimization and eager to apply knowledge in real-world applications.
 
 ---
 
 #### Education
 - **Cornell University**  
   *Bachelor of Science in Mechanical and Aerospace Engineering*  
-  GPA: 3.8/4.0 | Graduation: Month, Year
+  GPA: 3.8/4.0 | Graduation: May, 2027
 
-- **[High School Name]**  
+- **Edgemont Junior-Senior High School**  
   *High School Diploma*  
-  Graduation: [Month, Year]
+  Graduation: June, 2023
 
 ---
 
 #### Skills
-- **Software:** Autodesk Fusion 360, SolidWorks, ANSYS  
-- **Programming:** Python, MATLAB  
-- **Tools:** 3D Printing, Laser Cutting  
+- **Software:** Autodesk Fusion 360, SolidWorks, ANSYS, XFLR5  
+- **Programming:** Python, MATLAB, Java
+- **Tools:** 3D Printing, Laser Cutting, Machine Shop  
 
 ---
 
-#### Projects
-- **[Project Title]**:  
-  *[Short Description]*  
-  - Key Achievement 1  
-  - Key Achievement 2  
+#### Leadership and Extracurriculars
+- **Cornell Design Build Fly**:
+  
+  *Propulsion Subteam Lead*    
+  - Designed and implemented program to iteratively assess various propulsion and electronic system configurations. 
+  - Led 6-person subteam: delegated, tracked, and supervised tasks in weekly meetings. 
+  - Presented and directed subteam through 3 critical design reviews to justify design and component decisions. 
+  
+  *Member of the Propulsion Subteam* 
+  - Planned and fabricated the electronics integration piece,justified design in 60-page competition report.  
+  - Helped identify battery and motor specifications for required aircraft speed and payload capacity. 
+  - Led propeller static thrust tests, ensuring the achievement of necessary flight time and maximum force.    
+  
+  *Member of the Piloting Subteam*    
+  - Aided in test-flight aircraft main fuselage, wing, and electronics assembly. 
+  - Tested aircraft servo, motor, and flight function on runway line in Wichita, Kansas 2024 competition. 
 
-- **[Project Title]**:  
-  *[Short Description]*  
-  - Key Achievement 1  
-  - Key Achievement 2  
+- **C-Salt**:  
+  *Member of the Mechanical Subteam*  
+  - Prepared comprehensive CADs of high-pressure water compressor for U.S. DOE's Marine Energy Collegiate Contest. 
+  - Analyzed design ramifications for wave-energy converter systems powering ocean-water desalinators in Guam.  
 
 ---
 
 #### Work Experience
-- **[Company Name] - Intern**  
-  [Month, Year] - [Month, Year]  
-  - Responsibility 1  
-  - Responsibility 2  
+- **Comarch - Data Analytics Programming Intern**  
+  June, 2024 - July, 2024  
+- Delivered ML script combining individually weighted and optimized prediction models to forecast server utilization. 
+- Co-developed program to securely retrieve internal company database metrics live for the Comarch Infraspace Cloud. 
+ - Troubleshooted obstacles to internal LLM implementation with the national Polish AI / ML team. 
+ - Suggested future steps for integrating cloud with larger-variable forecasting models in department-wide presentation.  
+
+- **Cornell Engineering - Undergraduate Teaching Assistant**
+  August, 2024 - January, 2025
+- Expanded on key physics concepts from lecture twice a week, co-leading 20-person cooperative learning sections. 
+- Underwent 15-week training session focusing on differential learning, communicative responses, student engagement.
 
 ---
 
-#### Achievements & Certifications
-- [Certification Name], [Issuing Organization], [Year]  
-- [Achievement Name], [Competition/Event], [Year]  
+#### Languages:
+- English (C2)
+- Polish (C2)
+- French (C1)
+- German (B1)
 
 ---
 
-#### Extracurricular Activities
-- Member of [Club/Organization Name]  
-- Volunteer for [Event/Organization Name]  
+#### Other
+- U.S. and Polish (EU) citizen
 
 ---
 

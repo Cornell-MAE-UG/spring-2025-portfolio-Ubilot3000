@@ -8,12 +8,12 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : Your Name
+title                    : Kasper Atkinson
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : Your Name
-description              : Your Name - Projects and CV 
-baseurl                  : "" # Set this to "portfolio-<your-github-username>" 
+name                     : Kasper Atkinson
+description              : Kasper Atkinson - Projects and CV 
+baseurl                  : "/portfolio-Ubilot3000" # Set this to "portfolio-<your-github-username>" 
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 
 # Theme and Style

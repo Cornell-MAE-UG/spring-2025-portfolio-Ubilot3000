@@ -1,16 +1,19 @@
 ---
 layout: default
-title: <Your Name>
+title: <Kasper Atkinson>
 ---
 
 ## About Me
 
 
-![Profile Picture]({{ "assets/images/profile-pic.jpg" | relative_url }}){: class="profile-image"}
+![Profile Picture]({{ "assets/images/Headshot.jpg" | relative_url }}){: class="profile-image"}
 
- 
-My name is {{ site.name }}, and I am [your pitch paragraph about your passions, knowledge and interestst.] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec accumsan leo. Pellentesque ornare orci enim, vitae vestibulum nibh rutrum in. Donec pharetra risus nec ipsum fringilla, et mattis tortor auctor. Duis tortor ante, posuere ut odio a, scelerisque interdum purus. Aenean faucibus luctus est, sed bibendum tellus. Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
+Heyo! I'm Kasper. 
 
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
+I'm a learner. Every time I approach an obstacle, something I don't quite understand, it excites me. I become motivated by the pursuit of the unknown. Because it's difficult, and I find the struggle rewarding.
+
+That's why I am an engineer. It's also why I'm particularly interested in aerospace. I search for boundaries to break and new ideas to form. I hope to be on the cutting edge of the unknown.
+
+At Cornell's Design Build Fly, I've had three years of experience as a member, subteam lead, and now full-lead, working through every part of the design cycle. From the time rules come out in August, to our compeition in April, I am non-stop at work: ideating, redesigning, improvising. Everything always breaks the first time around. Then the second. Then, if you're unlucky, the third. But I couldn't imagine anything different. Never do I learn so much in such a short time, and never is it as rewarding. 
 
 Take a look at <a href="{{ "/projects/" | relative_url }}">my projects</a> and <a href="{{ "/cv/" | relative_url }}">CV</a>.
