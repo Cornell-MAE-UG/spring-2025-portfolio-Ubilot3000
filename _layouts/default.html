@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- Favicon declarations -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/Cornell_Logo_favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/images/Cornell_Logo_favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/images/Cornell_Logo_favicon.png">
+    
+    {% if site.plugins contains "jekyll-feed" %}{% feed_meta %}{% endif %}
 </head>
-
+<!-- MathJax support for LaTeX equations -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 <body>
+    <div class="site-container">
+        {% comment %} Sidebar will go here {% endcomment %}
+        <aside class="site-sidebar">
+            <div class="sidebar-header">
+                <a class="site-title" href="{{ '/' | relative_url }}">
+                    <img src="{{ site.baseurl }}/assets/images/Cornell_Logo.png" alt="{{ site.title }}" class="logo-image">
+                </a>
+            </div>
+            {% include navigation.html %}
+        </aside>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark text-white";>
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
-          <span class="navbar-toggler-icon"></span>
-        </button>  
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ "/" | relative_url }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.url == '/projects/' %}active{% endif %}" href="{{ "/projects/" | relative_url }}">Projects</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link {% if page.url == '/cv/' %}active{% endif %}" href="{{ "/cv/" | relative_url }}">CV</a>
-            </li>
-          </ul>
+        <div class="main-content-area">
+            {% comment %} We might want a top bar here in the future, but for now, just content {% endcomment %}
+            <main class="content-wrapper">
+                {{ content }}
+            </main>
+            {% include footer.html %}
         </div>
-      </div>
-    </nav>
-  </header>
-  
-  
-  <main class="container">
-    {{ content }}
-  </main>
-
-  <footer class="footer navbar-dark text-white text-center";>
-    <div class="container">
-      &copy; 2024 {{ site.name }}. All rights not reserved.
     </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

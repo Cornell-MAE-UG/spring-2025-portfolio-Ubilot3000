@@ -1,46 +1,56 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Site settings
+title: Kasper Atkinson - Engineering Portfolio
+email: kna37@cornell.edu
+description: >- # this means to ignore newlines until "baseurl:"
+  A brief description of your portfolio and your skills.
+baseurl: "/spring-2025-portfolio-Ubilot3000" # the subpath of your site, e.g. /blog. For GitHub Pages user sites, this is often blank.
+url: 
 
+# Author/Social
+author:
+  name: Kasper Atkinson # Update this from "Your Name"
+  # twitter_username: yourtwitter
+  # github_username:  yourgithub
 
-# Site Settings
-locale                   : "en-US"
-title                    : Kasper Atkinson
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : Kasper Atkinson
-description              : Kasper Atkinson - Projects and CV 
-baseurl                  : "/spring-2025-portfolio-Ubilot3000" # Set this to "portfolio-<your-github-username>" 
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-
-# Theme and Style
-theme: jekyll-theme-minimal
-color_scheme: light # light/default, dark, or aqua
-
-sass:
-  style: compressed
-
-# Outputting
-permalink: /:categories/:title/
-
-collections:
-  pages:
-    output: true
-  projects:
-    output: true
-    permalink: /:collection/:path/
-
-# Markdown
+# Build settings
 markdown: kramdown
 kramdown:
-  input: GFM
+  input: GFM # Enables GitHub Flavored Markdown
+  syntax_highlighter: rouge
 
-# Plugins (previously gems:)
+# Collections
+collections:
+  projects:
+    output: true # This will generate a page for each project
+    permalink: /projects/:name/ # URL structure for individual project pages
+  reports:
+    output: true # This will generate a page for each report
+    permalink: /reports/:name/ # URL structure for individual report pages
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically
+# added to the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - assets/files/project_writeups.docx
+
 plugins:
   - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-seo-tag
 
+include:
+  - assets/covers
+  - assets/files

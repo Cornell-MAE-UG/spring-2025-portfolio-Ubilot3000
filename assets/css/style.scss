@@ -1,0 +1,494 @@
+---
+---
+
+// Variables (Streamlit-inspired colors)
+/* stylelint-disable-next-line font-family-name-quotes */
+/* @ts-ignore */
+@use "sass:color";
+$primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$base-font-size: 16px;
+
+$streamlit-bg: #f0f2f6; // Light grey background
+$streamlit-content-bg: #ffffff; // White for content cards/areas
+$streamlit-sidebar-bg: #ffffff; // Streamlit often has a white sidebar too, or very light grey
+$streamlit-text-color: #262730; // Dark grey for text
+$streamlit-heading-color: #0e1117; // Almost black for main headings
+$streamlit-accent-color: #ff4b4b; // Streamlit's primary accent (can be changed)
+$streamlit-border-color: #e6e6e6; // Light border color
+$streamlit-subtle-text: #555761;
+
+// Basic Reset
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd, aside, main, header, footer, nav {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Important for layout
+}
+
+body {
+  font-family: $primary-font;
+  line-height: 1.6;
+  color: $streamlit-text-color;
+  background-color: $streamlit-bg;
+  font-size: $base-font-size;
+  display: flex; // For the sidebar layout
+}
+
+.site-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+// Sidebar
+.site-sidebar {
+  width: 280px; // Adjust as needed
+  background-color: $streamlit-sidebar-bg;
+  border-right: 1px solid $streamlit-border-color;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed; // Makes sidebar sticky
+  left: 0;
+  top: 0;
+  height: 100vh; // Full height
+  overflow-y: auto; // Scroll if content is long
+
+  .sidebar-header {
+    margin-bottom: 30px;
+
+    .site-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $streamlit-heading-color;
+      text-decoration: none;
+      display: block; // Make it take full width for easier clicking
+      padding-bottom: 10px;
+      border-bottom: 1px solid $streamlit-border-color;
+
+      > img.logo-image {  // Direct child selector for higher specificity
+        width: 220px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// Navigation in Sidebar
+.site-nav ul {
+  list-style: none;
+}
+
+.site-nav li {
+  margin-bottom: 10px;
+}
+
+.site-nav a {
+  color: $streamlit-subtle-text;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: lighten($streamlit-bg, 2%); // Slightly lighter than main bg
+    color: $streamlit-heading-color;
+    transform: translateY(-2.5px);
+    box-shadow: 0 2ps 5px rgba(0,0,0,0.1);
+  }
+  &.active {
+    background-color: $streamlit-accent-color;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+// Main Content Area (to the right of the sidebar)
+.main-content-area {
+  flex-grow: 1;
+  padding: 30px 40px;
+  margin-left: 280px;
+  background-color: $streamlit-bg;
+  width: calc(100% - 280px); // Explicit width calculation
+}
+
+.content-wrapper {
+  background-color: $streamlit-content-bg;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  min-height: calc(100vh - 60px - 50px);
+  overflow: hidden; // This ensures floated content is contained
+  width: 100%; // Explicit width
+  display: flow-root; // Better than overflow: hidden for float containment
+
+  article {
+    h2 {
+      margin-top: 1em;
+      margin-bottom: 0.7em;
+      color: $streamlit-heading-color;
+      font-size: 1.6em;
+    }
+
+    // Target first h2 specifically
+    h2:first-of-type {
+      margin-top: 0em;
+    }
+  }
+}
+
+.image-wrapper {
+  float: right;
+  width: 300px; // Wider than image to account for padding
+  margin: -10px 0 20px 40px;
+}
+
+.profile-image {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.project-image {
+  width: 450px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+// .project-image-large {
+//   width: 1700px;
+//   height: auto;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+//   object-fit: cover;
+// }
+
+.image-wrapper-large {
+  float: right;
+  width: 550px; // Wider than image to account for padding
+  margin: -10px 0 20px 40px;
+}
+
+// Ensure paragraphs create proper flow
+p {
+  display: block;
+  margin-bottom: 1.2em;
+}
+
+
+// Page specific content styling
+.page-content, .project-detail {
+  .page-header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;  // Reduced from 1em
+    color: $streamlit-heading-color;
+    padding-bottom: 0.3em;  // Reduced from 0.5em
+    border-bottom: 2px solid $streamlit-accent-color;
+    display: inline-block;
+  }
+}
+
+.entry-content {
+  h2 {
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    margin-bottom: 0.7em;
+    color: $streamlit-heading-color;
+  }
+  h3 {
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: $streamlit-heading-color;
+  }
+  p, ul, ol {
+    margin-bottom: 1.2em;
+    color: $streamlit-text-color;
+  }
+  ul, ol {
+    padding-left: 20px; // Use padding for lists, not margin
+  }
+  a {
+    color: $streamlit-accent-color; // Use accent for links
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
+  blockquote {
+    border-left: 4px solid $streamlit-accent-color;
+    padding: 10px 20px;
+    margin: 1.5em 0;
+    background-color: lighten($streamlit-bg, 2%);
+    color: $streamlit-subtle-text;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+  }
+  pre, code {
+    background-color: #2d2d2d; // Darker background for code blocks
+    color: #f0f0f0; // Light text for code blocks
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 0.2em 0.4em;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+  }
+  pre {
+    padding: 1em;
+    overflow-x: auto;
+  }
+  pre code {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+
+// Project Gallery (Adjusted for Streamlit feel)
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // Slightly larger cards
+  gap: 25px;
+  margin-top: 2em;
+
+  .project-card {
+    background-color: $streamlit-content-bg; // Use content bg
+    border: 1px solid $streamlit-border-color;
+    border-radius: 8px; // More rounded
+    overflow: hidden;
+    text-align: left; // Align text left for cards
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 200px; // Adjust as needed
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      border-bottom: 1px solid $streamlit-border-color; // Consistent border
+      border-radius: 0; // Image itself doesn't need radius if card has overflow hidden
+    }
+
+    h3 {
+      font-size: 1.15em;
+      margin: 15px 20px; // More padding
+      color: $streamlit-heading-color;
+      font-weight: 600;
+    }
+  }
+}
+
+// Individual Project Page
+.project-detail {
+  .project-subtitle {
+    color: $streamlit-subtle-text;
+    margin-top: -0.8em;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+  }
+  .project-main-image {
+    max-width: 60%; // Allow main image to be larger
+    margin-bottom: 2em;
+  }
+}
+
+// Reports gallery
+.report-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 2em;
+
+  .report-card {
+    background-color: $streamlit-content-bg;
+    border: 1px solid $streamlit-border-color;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center; // Match project card alignment
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    height: auto; // Remove fixed height to allow content to determine size
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .report-icon {
+      width: 95%;
+      height: 400px; // Fixed height for consistent image size
+      object-fit: contain;
+      margin: 1e auto;
+      display: block;
+      transition: filter 0.2s ease;
+      box-shadow: none;
+    }
+
+    h3 {
+      padding: 15px 20px;
+      margin: 0;
+      font-size: 1.15em;
+      color: $streamlit-heading-color;
+      font-weight: 600;
+      background-color: $streamlit-content-bg;
+      flex-grow: 1; // Allow text container to fill remaining space
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+  }
+}
+
+
+// Footer (now inside main content area)
+.site-footer {
+  background-color: transparent; // No separate background for footer
+  color: $streamlit-subtle-text;
+  padding: 2em 0 1em 0; // Adjust padding
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 3em; // Space above footer
+  border-top: 1px solid $streamlit-border-color; // Subtle top border
+
+  a {
+    color: $streamlit-accent-color;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Code block MATLAB
+
+.language-matlab .highlight {
+  background-color: #2d2d2d;
+  color: #f0f0f0;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Comments (%) */
+.language-matlab .c1 {
+  color: #50C878;
+  font-style: italic;
+}
+
+/* Keywords */
+.language-matlab .k {
+  color: #ff79c6;
+  font-weight: 600;
+}
+
+/* Strings */
+.language-matlab .s {
+  color: #50fa7b;
+}
+
+/* Numbers */
+.language-matlab .mf {
+  color: #bd93f9;
+}
+
+/* Operators */
+.language-matlab .o {
+  color: #f8f8f2;
+}
+
+/* Variables / identifiers */
+.language-matlab .n {
+  color: #f0f0f0;
+}
+
+/* Punctuation */
+.language-matlab .p {
+  color: #f8f8f2;
+}
+
+.language-matlab .nb {
+  color: #8be9fd;   // cyan
+  font-weight: 600;
+}
+
+/* User-defined or recognized function calls */
+.language-matlab .nf {
+  color: #8be9fd;   // cyan
+  font-weight: 600;
+}
+
+
+
+// Resume download button
+.resume-download {
+    text-align: center;
+    margin: 2em 0;
+    
+    .download-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: $streamlit-accent-color;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        color: $streamlit-content-bg; // White text
+        font-weight: 500;
+        
+        span {
+            display: block;
+            padding: 8px 16px;
+            background-color: $streamlit-content-bg;
+            border-radius: 6px;
+            color: $streamlit-accent-color;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        &:hover {
+            background-color: darken($streamlit-accent-color, 10%);
+            transform: translateY(-5px);
+            box-shadow: 0 2ps 5px rgba(0,0,0,0.1);
+            span {
+                background-color: darken($streamlit-content-bg, 2%);
+            }
+        }
+    }
+}

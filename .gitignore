@@ -1,34 +1,8 @@
-# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-
-# Node
-node_modules/
-
-# Logs and databases
-*.log
-*.sqlite3
-*.ds_store
-
-# Operating System generated files
 .DS_Store
-Thumbs.db
-
-# Bundler and Gem files
-.bundle/
 vendor/
-Gemfile.lock
-
-# Temporary files
-*.tmp
-*.swp
-*.swo
-*~
-
-# GitHub Actions
-.github/workflows/*
-
-# VS Code specific settings
-.vscode/
+.bundle/
+*.docx
